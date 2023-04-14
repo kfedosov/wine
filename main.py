@@ -30,8 +30,7 @@ template = env.get_template('template.html')
 now = datetime.datetime.now()
 years_passed = now.year - 1920
 
-excel_data_df = pandas.read_excel('wine3.xlsx', sheet_name='Лист1')
-# Заменяем nan на None
+excel_data_df = pandas.read_excel('products.xlsx', sheet_name='Лист1')
 excel_data_df = excel_data_df.where((pandas.notnull(excel_data_df)), None)
 excel_data_dict = defaultdict(list)
 
